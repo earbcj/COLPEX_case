@@ -1,0 +1,393 @@
+\documentclass[times]{qjrms4}
+%\documentclass[times,doublespace]{qjrms4}%For paper submission
+\usepackage[colorlinks,bookmarksopen,bookmarksnumbered,citecolor=red,urlcolor=red]{hyperref}
+
+\newcommand\BibTeX{{\rmfamily B\kern-.05em \textsc{i\kern-.025em b}\kern-.08em T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\usepackage{moreverb}
+
+\def\volumeyear{2015}
+
+\begin{document}
+
+\runningheads{B.~C.Jemmett-Smith \emph{et al} }{Case study of cold-air-pooling in valleys}
+
+\title{A case study of cold air pool evolution in hilly terrain using field measurements from COLPEX}
+
+\author{Bradley Jemmett-Smith\affil{a}\corrauth, Andrew Ross\affil{a}, Peter Sheridan\affil{b}, John Hughes\affil{a} and Simon Vosper\affil{b}}
+
+\address{\affilnum{a} University of Leeds, Leeds, UK \affilnum{b} Met Office, Exeter, UK}
+
+\corraddr{B.C. Jemmett-Smith, School of Earth and Environment, University of Leeds, Woodhouse Ln, Leeds, West Yorkshire, LS2 9JT, UK. \\E-mail: b.jemmett-smith@leeds.ac.uk}
+
+\begin{abstract}
+A case study investigation of cold air pool (CAP) evolution in hilly terrain is conducted using field measurements made during IOP 16 of the COLd air Pool EXperiment (COLPEX). COLPEX was designed to study cold air pooling in small scale valleys typical of the UK ($\sim$100-200$\,\mbox{m}$ deep, $\sim$1 km wide). Despite their relatively small size such valleys can exhibit temperatures up to 10$^\circ$C colder than surrounding hilltops during strong CAP events, with large impacts on local road icing and fog formation. The synoptic conditions during IOP 16 are typical of those required for CAPs to form during the night, with high pressure, clear skies and low ambient winds. Initially a CAP forms around sunset and grows uninterrupted for several hours. However, some 4$\,\mbox{h}$ after sunset this pattern changes with the CAP and drainage flows being disturbed intermittently, but not eroded, for the remainder of the night. Three episodes are highlighted using LIDAR measurements and the cause of disruption attributed to; (1) wave activity, caused by gravity waves and/or Kelvin Helmholtz (KH) instability, (2) rapid increases in the ambient wind, (3) the development of a nocturnal low level jet (NLLJ). A weakly stable residual layer provides the conditions for wave activity during Episode 1. This residual layer is eroded by a developing NLLJ from top down during Episode 2. The sustained increase in winds at hill top levels, attributed to the NLLJ, continue to disrupt the CAP through Episode 3; however, the CAP mostly remained intact and lower regions were mostly unaffected. The NLLJ may also play a role in CAP breakup, which occurs some 3.5$\,\mbox{h}$ after local sunrise. This case study highlights a number of meteorological phenomena that can disrupt CAP evolution, despite conditions apparently ideal for CAPs to form. These processes are unlikely to be sufficiently represented by current operational weather forecast models; therefore, highlighting the need to further investigate nocturnal boundary-layer evolution and related phenomena.
+\end{abstract}
+
+
+\keywords{stable boundary layer; complex terrain; hill; gravity waves; kelvin helmholtz instability; nocturnal low-level Jet; COLPEX}
+
+\maketitle
+
+\section{Introduction}
+CAPs are typically characterised by very strong near surface temperature inversions that start to form around sunset within convex terrain such as dips, hollows, valleys or basins. As the CAP grows it spreads out laterally up the slopes with the isotherms of potential temperature $\theta$ parallel to the valley floor. Without interruption, by increasing wind speed, incoming cloud or fog, the CAP can be maintained through the night and temperature differences across the valley or basin depth will continue to grow until sunrise \citep{gustavssonetal1998}. The formation of CAPs can lead to the heightened risk of prolonged cold weather, persistence of lying snow, frost, fog and/or pollution episodes \citep{lareauetal2013persist}. The motivations for studying CAPs are numerous. Their occurrence can have impacts on the environment, health, road safety \citep{bogren2000local} and agriculture \citep{lindkvistetal2000,madelin2005spatial}, with subsequent impacts on the economy; mainly through disruption of transport networks and by damaging crops. The issuing of hazard warnings (i.e., black ice, extreme cold weather) and taking action to mitigate these hazards (i.e., gritting roads, issuing extreme cold weather warnings), depends on the ability of weather forecast models to accurately predict CAP outbreaks successfully. The improved representation of CAPs in weather models is likely to be achieved through either; (1) the continued development of downscaling techniques \citep{pozdnoukhov2009data,sheridan2013characteristics}, (2) the development of parameterisations, (3) through increased resolution \citep{vosper2013high,hughes2015assessment}. A CAP parameterisation or downscaling technique applied to regional and global climate models can subsequently improve the representation of minimum and maximum temperature, which are proxies for the impact of climate change \citep{daly2010local}.
+	
+Depending on time, location and atmospheric stability, CAP formation tends to be associated with two regimes; (1) the drainage of cool air, referred to as katabatic winds \citep{heywood1933katabatic,manins1979katabatic} or drainage flows \citep{gudiksen1992measurements}; (2) a sheltered decoupled layer in the lowest parts of valleys or basins, where cooling occurs in-situ through a divergence in the sensible heat flux with little or no horizontal advection of cold air \citep{vosper2008numerical}. Here we define drainage flows as down-slope flowing layers that form in valleys, where smaller drainage flows merge with other drainage flows from neighbouring tributary valleys to form larger deeper flows that flow in a down valley direction \citep{orgill1992mesoscale,Vosper2013narrow}. The basic driving force behind drainage flows is the cooling of near-surface air above a sloping surface. Rapid cooling of the air in contact with the elevated slope occurs around sunset following the shut-down of the daytime sensible heat flux away from the surface. This air becomes negatively buoyant and is accelerated down slope towards valley bottoms \citep{vosper2008numerical,gudiksen1992measurements,Vosper2013narrow}. For complex terrains, where the valley meanders and is joined by multiple tributary valleys, drainage flows are likely to be important in terms of the redistribution of cold air across the valley system \citep{vosper2008numerical}. Both drainage flows and sheltered cooling regimes can occur independently or simultaneously. In the latter instance the colder decoupled layer is present below a thermally driven drainage flowing layer \citep{clements2003cold,Vosper2013narrow}.
+
+Modelling investigations by \citet{vosper2008numerical} and observations by \citet{sheridan2013characteristics} have shown that the variability in ambient wind speed and the radiative conditions mostly determine CAP strength for a given night. Others have also shown that changes in ambient wind speed \citep{orgill1992mesoscale} and direction \citep{coulter1989} affect the structure of drainage flows in valleys, which will subsequently affect the dynamics of the CAP as a whole. Drainage along upper slopes and upper parts of drainage flows are greatly influenced by the large-scale ambient wind and are very susceptible to breakdown through turbulent mixing from above, due to their proximity to the free atmosphere, lack of terrain sheltering and generally weaker density gradients than within the valley \citep{barr1989influence,gudiksen1992measurements}. \citet{orgill1992mesoscale} find that wind erosion processes of drainage flows are especially active when above-valley winds exceed 5 m s$^{-1}$ and accelerations exceed $4\times10^{-4}$ m s$^{-2}$. Similarly, \citet{heywood1933katabatic} and \citet{gudiksen1992measurements} do not observe drainage flows when ambient winds exceed values of around 5 m s$^{-1}$. More generally others find that CAPs are particularly sensitive to break up when ambient winds exceed between 5 and 8 m s$^{-1}$ \citep{barr1989influence,iijima2000seasonal}. Without changes in the radiative conditions these studies suggest that both CAPs and valley drainage flows are greatly influenced when ambient winds exceed values that reduce the stability enough to cause top down erosion through shear driven turbulence. There are also other SBL phenomena to consider, which may have the potential to influence CAP evolution, such as; gravity waves, including hydraulic jumps \citep{adler2012warm}; the formation of nocturnal low-level jets \citep[NLLJs]{thorpe1977nocturnal}; large horizontal wind oscillations known as meandering \citep{orgill1992mesoscale}; turbulent meso-flows \citep{parker1993case}. \textcolor{red}{\bf slanted cold fronts/micro fronts can't find a paper (Mahrt and Franke, 1988???, Osullivan???)}.
+
+\citet{zangl2005dynamical} suggests that CAP erosion by turbulent mixing from above plays a comparatively minor role in deep valley systems, which often have complex wind regimes and where CAPs can persist for multiple days \citep{whiteman2001cold}. Therefore it seems entirely plausible that turbulent mixing from above -- potentially attributed to any of the previously mentioned SBL phenomena -- will play a comparatively larger role in valleys with shallower depths compared to large deep mountainous valleys or basins. This is illustrated in investigations by \citet{mahrt2015common}, which show the intermittent destruction of shallow valley CAPs, termed marginal cold pools. In these instances the intermittent destructions of CAPs are caused by relatively small increases in wind speed of a few metres per second which are attributed to normal background submesoscale motions.
+
+This paper presents a case study of CAP evolution using a unique and extensive set of field measurements in a hilly terrain regions with multiple valleys and depths typically around 200$\,\mbox{m}$. The valleys in the study area are deeper than in the study by \citet{mahrt2015common}, yet much shallower than many other CAP studies in mountainous regions \textcolor{red}{\bf (e.g., Whiteman et al., 2001 and others?)}. The synoptic conditions that prevail during the case study are typical of conditions that are ideal for CAPs to form; high pressure, clear skies and light ambient winds. Despite this the CAP that formed is disturbed on several occasions during the night. Three episodes are investigated characterised by LIDAR observations of these disturbances. A description of data and methods are given in section 2. Section 3 is divided into subsections with results and discussion of each episode. Summary and conclusions are given in section 4.
+
+
+\section{Data and methods}
+\label{methods}
+A key part of the COLPEX experiment was to improve our understanding and enable prediction of local flows in complex terrain caused by the formation of cold-air pools in valleys during stable night-time conditions, given accurate knowledge of the large scale meteorological conditions \citep{price2010COLPEX}. As described in detail by \citet{price2010COLPEX}, the COLPEX project involved an extensive field experiment conducted in the Clun Valley (52.43$^\circ$N, 3.14$^\circ$W), which is located in the Midland region of the UK in the county of Shropshire. The Midland region is known to have a particularly high number of frost days each year compared to the rest of the UK, with only 60 days expected to remain frost free \citep{KingandGiles1997}. The rolling hills and network of valleys that make up the Clun Valley typify many regions across the UK. The ground cover is mostly green pastures lined with hedgerows and less than 10\% woodland \citep{price2010COLPEX}. A map showing the terrain and instrument locations are given in Figure \ref{fig:MAP}. The terrain is modest with valley depths rarely exceeding 250$\,\mbox{m}$. The main vein of the Clun Valley is $\sim$25 km in length. Notable neighbouring and tributary valleys tend to be between 5 km and 15 km in length. The majority of the main Clun Valley is oriented west to east from Duffryn (245$\,\mbox{m}$ ASL) to Clun (185$\,\mbox{m}$ ASL). The western most part from Anchor (400$\,\mbox{m}$ ASL) to Duffryn is orientated north-west to south-east. The width of the valley from peak to peak increases from west to east and the valley floor has a gentle undulating slope down towards the east. The highest peaks in the region are at an altitude of $\sim$470$\,\mbox{m}$ ASL (Masons Bank) and the lowest regions are at $\sim$185$\,\mbox{m}$ ASL (Clun Castle). At the centre of the Clun Valley north of Springhill, the floor width is approximately 0.5 km and the peak to peak width approximately 1.5 km. Two of the largest tributary valleys feed into the main valley from the north near Bicton, orientated north to south, and near Newcastle, orientated north-north-west to south-south-east. A third tributary valley feeds into the main valley at Duffryn and is orientated west-south-west to east-north-east. The neighbouring Burfield Valley is located south from the Clun Valley, is approximately 15 km in length and is mostly orientated north-west to south-east.
+%
+	\begin{figure}
+	\centering
+	\includegraphics[width=8.7cm]{QJR_case_methods_map}
+	\caption{Map showing instrumentation deployed during COLPEX across the Clun Valley region. Triangles are HOBOs, Circles are AWS and Mast sites are highlighted by Balloons; Burfield, Duffryn and Springhill.}
+	\label{fig:MAP}
+	\end{figure}
+
+The combined collaboration of the Met Office, the National Centre for Atmospheric Science and the University of Leeds, provided a comprehensive set of field instruments as detailed in \citet{price2010COLPEX}. Much of the instrumentation was deployed and remained operational during the period from September 2009 to April 2010. Three main instrument sites, which include instrumented masts taking measurements of mean flow and turbulent fluxes, are located at the Burfield Valley ($\sim$316$\,\mbox{m}$ ASL), Upper Duffryn ($\sim$246$\,\mbox{m}$ ASL) and Springhill Farm ($\sim$402$\,\mbox{m}$ ASL); in future these mast sites are simply referred to as Burfield, Duffryn and Springhill. Duffryn is located on the floor of the main Clun Valley roughly 5.5 km SE from the valley head. Burfield is located within a bowl shaped area in the northern part of the Burfield Valley. The Burfield site is located higher than much of the Clun Valley floor, including Duffryn. Springhill is sited on a hill top between Burfield and Duffryn. During intensive observation periods (IOPs), radiosonde measurements were launched from Duffryn, and either Springhill or Burfield. At Duffryn a Halo Photonics 1.5 micron pulsed Doppler LIDAR (Light Detection And Ranging) continuously takes measurements that are particularly useful for studying the composition and structure of the boundary-layer. Deployed throughout the region were 31 satellite weather stations, made up of 21 HOBO data loggers (Onsett Computer, inc.) and 10 automatic weather stations (AWS). The main purpose of the AWS was to provide an understanding of the flow dynamics (horizontal components u, v) across the Clun Valley region, as well as provide further measurements of temperature and relative humidity (RH) as measured by the HOBOs.
+
+The following study is focused on measurements obtained during IOP 16 from 4--5 March 2010. A numerical modelling study of IOP 16 was also conducted by \citet{Vosper2013narrow}. Using the COLPEX field measurements this case study investigation aims to gain insight into how CAPs evolve during conditions that are typically ''ideal'' for strong cold-air pools to form; light winds, high pressure, little or no cloud cover.
+        \begin{figure}
+        \centering
+        \includegraphics[width=6cm]{QJR_case_analysis}
+        \caption{\textcolor{red}{\bf unfinished; improve figures, maybe keep one chart?} Met Office surface analysis charts for 5 March 2010 at (a) 00:00 UTC and (b) 12:00 UTC. The Clun Valley is highlighted by the grey filled circle.}
+        \label{fig:metcharts}
+        \end{figure}
+        
+\section{Results}
+\subsection{Overview of IOP 16; 4--5 March 2010}
+%%%%%%%%%%%%%%%%%%
+% Text
+IOP 16 occurred between 12:00 UTC 4 March and 12:00 UTC 5 March 2010. The conditions were settled during the IOP, with the weather over the UK being dominated by an anticyclone ($\sim$1035 hPa central pressure) centred  off the west coast of Ireland (Figure \ref{fig:metcharts}). During IOP 16 the anticyclone centre moved slowly eastwards toward Ireland. This led to a small pressure increase in the Clun Valley region over the 24$\,\mbox{h}$ period measuring $\sim$5 hPa at the hill top site AWS 2 (376$\,\mbox{m}$ ASL; Figure \ref{fig:MAP}). This also caused a change in the synoptic wind direction having a more northerly component by the end of the period (see Figure \ref{fig:metcharts}). The largest diurnal range in AWS potential temperature ($\theta$; note HOBOs do not take measurements of pressure, which is needed for in-situ calculations of $\theta$) was $\sim$14 K and occurred at AWS 5 located on the Clun Valley floor (204$\,\mbox{m}$ ASL; Figure \ref{fig:MAP}). The smallest range in AWS $\theta$ was 7.7 K measured by AWS 2 (376$\,\mbox{m}$ ASL). The minimum AWS $\theta$ was 265.2 K measured by AWS 5 soon after local sunrise (06:50 UTC). Temperatures below 0$^circ$C were measured by all AWS during the night; therefore, ground frost seems likely across the entire Clun Valley region at some time during the night.
+
+In-field observations taken by Met Office scientists at Duffryn reported clear skies, bright stars and small amounts of cirrus seen on occasions up until 00:31 UTC. At 05:35 UTC there was very hard ground, medium frost deposition and clear skies, with small amounts of cirrus on the horizon. By 09:00 UTC it was sunny, clear, with some frost remaining in the shadows. At 11:00 UTC the conditions remained sunny, clear, with no frost present. Visibility measurements at both Duffryn (valley bottom) and Springhill (hill top) did not record values low enough to suggest fog or mist formation for the entirety of IOP 16, recording minimums of 10.9 km and 3.7 km, respectively. Infrared satellite images also show no evidence of high cloud in the region throughout IOP 16 (not shown).
+        \begin{figure*}
+        \centering
+        \includegraphics[width=16cm]{QJR_Tblobs_2x2}
+        \caption{2$\,\mbox{m}$ $\theta$, 2$\,\mbox{m}$ winds (dark arrows), 50$\,\mbox{m}$ winds at Duffryn (T1), 30$\,\mbox{m}$ winds at both Springhill (T2) and Burfield (T3) (grey arrows). Data are 10 min mean periods centred at: 14:05 UTC, 18:05 UTC, 06:05 UTC and 10:05 UTC. Wind direction is vector averaged and the magnitude is the mean wind speed (scalar). \copyright/database right 2007. An Ordnance Survey/EDINA supplied service \copyright/ 2007.}
+        \label{fig:Tblobs}
+        \end{figure*}
+
+The spatial evolution of the CAP is illustrated by Figure \ref{fig:Tblobs} , which include measurements of 2$\,\mbox{m}$m $\theta$, 2$\,\mbox{m}$ winds (black arrows), 50$\,\mbox{m}$ winds at Duffryn (T1), and 30$\,\mbox{m}$ winds at both Springhill (T2) and Burfield (T3) (grey arrows), for 10 minute mean periods centred at; (a) 14:05 UTC, (b) 18:05 UTC, (c) 06:05 UTC, (d) 10:05 UTC. The sequence show the typical behaviour associated with CAP evolution. Prior to CAP formation temperatures are similar across the entire region and valley winds are either up-valley or mirror the ambient wind (Figure \ref{fig:Tblobs}(a)). During the first stages of CAP formation cold air collects in the bottom of the valleys first. At a similar time the valley winds become decoupled from the ambient wind aloft, and turn becoming down-valley (Figure \ref{fig:Tblobs}(b-c)), which reflects thermally-driven valley drainage flows. The lowest regions remain cooler than locations above forming a temperature inversion (Figure b-c), which is sustained until CAP break up occurs some time after sunrise (Figure \ref{fig:Tblobs}(d)). The down-valley drainage flows mostly persist throughout the night and cease to exist following CAP break up (Figure \ref{fig:Tblobs}(d)).
+
+A more detailed view of IOP 16 is summarised by the time-series in Figure \ref{fig:tseries}. At all locations cooling starts $\sim$2$\,\mbox{h}$ prior to local sunset (local sunset $\sim$18:00 UTC; Figure \ref{fig:tseries}(a)). By $\sim$19:00 UTC the two valley-bottom sites (AWS 5 and AWS 8) are clearly colder than those above indicating a temperature inversion. This persists until $\sim$09:00 UTC the following morning (local sunrise $\sim$0700 UTC) when temperatures across all sites become similar. A weaker CAP remains in some of the lowest regions $\sim$3$\,\mbox{h}$ after local sunrise; indicated by some lower sites (AWS 9, HOBO 6, HOBO 22) remaining slightly cooler than those above at 10:05 UTC.
+%
+        \begin{figure}
+        \centering
+        \includegraphics[width=6.2cm]{QJR_tseries_1x4}
+        \caption{\textcolor{red}{\bf Figures need improving, and need to include site measurements for both RH and $\theta$} 24$\,\mbox{h}$ time-series of (a) 2$\,\mbox{m}$ $\theta$, (b) Clun Valley ELR, (c) RH, (d) $M_r$. In (b) the solid line is the valley ELR gained using AWS and HOBO 2$\,\mbox{m}$ environmental temperature measurements, the markers show the valley ELR obtained using radiosonde measurements launched from Duffryn (0--400$\,\mbox{m}$ AGL). Vertical dashed lines indicate the approximate time of local sunset and sunrise.}
+        \label{fig:tseries}
+        \end{figure}
+
+The valley environmental lapse rate (ELR; Figure \ref{fig:tseries}(b)), averaged across the valley depth, provides a quantitative measure of the strength and development of the CAP across the entire valley region. Two ELRs are shown, the first is a near-surface temperature lapse-rate calculated using 2$\,\mbox{m}$ HOBO and AWS temperature data, the second is a boundary-layer ELR derived using radiosondes measurements launched from Duffryn between 0 and $\sim$200$\,\mbox{m}$ AGL. Consistent with Figure \ref{fig:tseries}(a), the ELRs show the evening transition from a well mixed convective boundary-layer (CBL; negative ELR) to a SBL (or nocturnal boundary-layer; positive ELR) around sunset. From sunset until $\sim$22:00 UTC the ELR increases uninterrupted, reflecting undisturbed growth of the CAP. However, this trend is changed with decreases in the ELR occurring between around 22:00 to 23:30 UTC and 02:30 to 03:30 UTC, recovering in-between with a small peak at $\sim$02:30 UTC. Following this there is a rapid strengthening of the CAP (i.e., increasing temperature gradient) from $\sim$04:00 UTC, ending with a 24$\,\mbox{h}$ peak around sunrise at $\sim$06:50 UTC. The ELR becomes negative $\sim$2.5$\,\mbox{h}$ after sunrise ($\sim$09:20 UTC), consistent with temperature inversion break-up during the morning transition. This is slightly earlier than some valley floor measurements suggest (see Figure \ref{fig:tseries}(a)), which highlights; (1) how localised temperature differences can be, (2) the advantage of using both site specific (individual AWS and HOBOs) and bulk quantities (ELR) to investigate CAP evolution. Overnight the ELR from the radiosonde measurements is typically (but not always) higher than the ELR from the 2$\,\mbox{m}$ temperatures, reflecting the fact that the air at hill top sites is cooler than the air above Duffryn at a similar altitude, this is due to continued radiative cooling of the near-surface air at hilltop locations \citep{Vosper2013narrow}. At 22:00 UTC and 23:00 UTC the ELR values are similar, this corresponds to the period when CAP growth is disrupted.
+
+Relative humidity (RH; Figure \ref{fig:tseries}(c)) and mixing ratio ($M_r$; Figure \ref{fig:tseries}(d)) measurements from a valley floor site HOBO 2 (202$\,\mbox{m}$ ASL) and a hill top site HOBO 16 (362$\,\mbox{m}$ ASL) also change during the IOP. These sites are chosen because; (1) they form part of the same transect of measurements, (2) they represent locations at different heights, (3) both have reliable and continuous measurements throughout IOP 16. Before sunset, RH and $M_r$ are similar at both locations. From 16:00 UTC until sunset ($\sim$18:00 UTC) RH increases, while $M_r$ remains relatively constant. This increase in RH is primarily caused by cooling temperatures (Figure \ref{fig:tseries}(a) and (b)). After sunset $M_r$ at the hill top site still remains relatively constant until $\sim$03:00 UTC, and RH increases as the air cools further. In contrast, $M_r$ at the valley floor site decreases steadily through the night. This, combined with the stronger cooling at the valley floor site, leads to a much more rapid increase in RH. A notable peak in RH occurs around 02:30 UTC, reaching $\sim$95\% at the valley floor and $\sim$80\% at the hill top, which coincides with the peak in ELR. Over the following hour (02:30 to 03:30 UTC) a dramatic drop in $M_r$ occurs at the hill top (HOBO 16) and values briefly match those seen at the valley floor (HOBO 2). This coincides with a decrease in ELR; further discussion of this period will follow. From 04:00 to 07:00 UTC RH changes little at the valley floor (HOBO 2) remaining around 95\% and $M_r$ continues to fall reaching a minimum around sunrise ($\sim$06:00 UTC). After sunrise, values of RH and $M_r$ at the hill top and valley floor site begin to converge. Around 10:30 UTC, RH and $M_r$ return to values seen before sunset the previous evening. Other comparable sites show a similar pattern of RH and $M_r$ changes.
+
+The fact that $M_r$ drops continuously in the valley but remains relatively unchanged at the hill top suggests that the moisture at the valley bottom site is being continuously removed through much of the night, by either frost or dew deposition as the air pools along the valley floor. Frost deposition seems more likely given that air temperatures at the lowest sites reach freezing around sunset (Figure \ref{fig:tseries}(a)), continue to cool thereafter and ground temperatures are expected to be colder still (\textcolor{red}{\bf see \citet{Vosper2013narrow}}). In contrast, except for a brief fall in temperatures to $\sim$0$^{\circ}$C at $\sim$04:00 UTC, temperature at the hill top site HOBO 16 remain around 1$^\circ$C for much of the period between 00:00 and 07:00 UTC; an indication that ground frost was likely, but not necessarily prevalent until after 00:00 UTC in hilltop regions [\textcolor{red}{problem with HOBO 16 temperature?}].
+
+One notable feature with regards to temperature are the numerous intermittent warming (or mixing) events that occur amid an overall cooling trend (Figure \ref{fig:tseries}(a)). The smaller intermittent events are similar in scale to the averaging period (10 minutes). These are likely to be caused locally by one, or a combination of the mechanisms outlined by \citet{banta2004nocturnal}: (a) local shear, (b) local pulsations, (c) local obstacle effects, (d) the convergence or divergence of local drainage flows. An example of a larger warming (or mixing) event occurs at Burfield between 03:00 and 04:00 UTC. At times these warming events are seen across several sites, possibly with some time lag, suggesting events propagating across the region. These warming events may also be accompanied by drying of the air, such as the decrease in $M_r$ at HOBO 16 (Figure \ref{fig:tseries}(c-d)); although valley floor locations such as HOBO 2 (co-located with AWS 5) are generally unaffected by these changes. In addition, there are a number of periods during the night where distinct changes in $\theta$, ELR, RH and $M_r$ are seen at one or more sites. LIDAR measurements taken at Duffryn (Figure \ref{fig:LIDAR}) show a number of anomalies occurring in the regions at and above the hill tops that coincide with these thermodynamic changes. Three episodes (Episodes 1, 2 and 3) are highlighted, characterised by the change in behaviour of the LIDAR measurements (Figure \ref{fig:LIDAR}). The focus of following sections are on these three episodes, with the aim of understanding what causes the anomalies and how they relate to changes in 2$\,\mbox{m}$ $\theta$, ELR, RH and $M_r$, as the CAP evolves.
+       \begin{figure*}
+        \centering
+        \includegraphics[width=17cm]{QJR_LIDAR_colour}
+        \caption{Time series of NCAS LIDAR measurements taken at Duffryn showing vertical profiles of vertical velocity and backscatter. The vertical dashed lines indicate local sunrise.}
+	\label{fig:LIDAR}
+        \end{figure*}
+
+% alternative caption for Analysis charts
+%	  \caption{Met Office surface analysis charts for 5 March 2010 at (a) 00:00 UTC and (b) 12:00 UTC. Grey filled circle is the approximate location of the Clun Valley.}
+%
+% t-series
+% alternative caption text
+%		\caption{24$\,\mbox{h}$ time series of (a) $2\,\mbox{m}$ $\theta$, (b) Clun Valley environmental lapse rate (ELR), (c) RH, (d) water vapour mixing ratio $M_r$. The solid line in (b) is the ELR calculated using all available $2\,\mbox{m}$ temperature measurements. Markers are the ELR between 0--400$\,\mbox{m}$ AGL, calculated from radiosonde measurements launched at Duffryn. Vertical dashed lines indicate local sunset and sunrise.}
+
+\subsection{Episode 1; wave activity}
+\label{ep1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Text
+The following results focus on the evolution of the CAP between 22:00 and 00:30 UTC, defined as Episode 1. From the LIDAR observations in Figure \ref{fig:LIDAR}, Episode 1 is characterised by between 6 and 8 intermittent increases and decreases in vertical velocities that occur in the region at and above the hill tops near Duffryn (200 to 400$\,\mbox{m}$ AGL). There is also one period of sustained downward vertical velocities soon after 23:00 UTC that extends throughout the LIDAR profile depth (125 to 800$\,\mbox{m}$ AGL); higher values are concentrated in the region between 150 and 250$\,\mbox{m}$ AGL (hill top region). This periodic behaviour in the LIDAR vertical velocities is unlike anything seen at other times during the night of IOP 16. At the same time a wave like structure is seen at the top of the LIDAR profile between 22:00 and 23:00 UTC and an interruption of the CAP growth occurs across the region, highlighted by the change in regime of the ELR from a progressive increase following sunset to a decrease around 22:00 UTC. Towards the end of Episode 1 the ELR starts to increase again, suggesting a return to CAP growth after the disturbance.
+%
+       \begin{figure*}
+        \centering
+        \includegraphics[width=17cm]{QJR_windtseries}
+        \caption{\textcolor{red}{\bf Figure needs improving} Time-series of (a) Wind speed, and (b) wind direction, measured at the tower sites Burfield 30$\,\mbox{m}$ (346$\,\mbox{m}$ ASL), Duffryn 50$\,\mbox{m}$ (296$\,\mbox{m}$ ASL) and Springhill 30$\,\mbox{m}$ (432$\,\mbox{m}$ ASL).}
+        \label{fig:windtseries}
+        \end{figure*}
+        
+Following sunset and prior to Episode 1, a generally persistent wind develops at both valley floor sites Burfield and Duffryn from the W to NW and from the WNW to NNW respectively, which is consistent with the development of down-valley drainage flow (Figure \ref{fig:windtseries}). The drainage flow at Burfield is disrupted at the start of Episode 1 ($\sim$22:00 UTC) with fluctuations to the NW and NE seen, which coincide with the change in ELR (Figure \ref{fig:tseries}(b)). The Duffryn drainage flow appears more persistent compared to Burfield, but is still disrupted between $\sim$22:30 and 23:30 UTC, with winds shifting from the NW at 22:30 UTC to the W, then to the SW by 23:05 UTC; note that a SW direction is roughly aligned with the axis of the neighbouring tributary valley containing AWS 3 that joins from the SW (see Figure \ref{fig:MAP}). The drainage flow at Duffryn is re-established by 23:35 UTC and remains for the duration of Episode 1.
+%
+% Radiosonde profiles:
+       \begin{figure*}
+        \centering
+        \includegraphics[width=17cm]{QJR_radiosondes}
+        \caption{\textcolor{red}{\bf Figure needs amending think labelling is incorrect} Radiosonde profiles launched from Duffryn at 16:00, 22:02, 23:01, 00:30 and 05:35 UTC, showing; (a) $\theta$, (b) RH (\%), (c) wind speed (m s$^-1$), (d) wind direction.}
+        \label{fig:radiosondes}
+        \end{figure*}
+
+Radiosonde profiles from Duffryn show changes in the vertical structure of the atmosphere during IOP 16 (Figure \ref{fig:radiosondes}). Three of the profiles occur during Episode 1. The 22:02 UTC radiosonde profile at the start of Episode 1 shows the existence of a residual layer extending from the hill tops at $\sim$200$\,\mbox{m}$ to around 700$\,\mbox{m}$ (AGL). This residual layer has a weak temperature gradient and little change in wind speed and direction with height. This is capped by a strong wind speed gradient and a very dry air mass above (RH is typically between 5 and 20\% above 800$\,\mbox{m}$). Between 22:02 to 23:01 UTC the layer between 100$\,\mbox{m}$ and 400$\,\mbox{m}$ AGL (50$\,\mbox{m}$ above the Duffryn mast to $\sim$200$\,\mbox{m}$ above nearby hill tops) has cooled. This cooling at the hill tops relative to lower regions is consistent with the decrease in ELR seen in Figure \ref{fig:tseries}(b). RH at the hill top site HOBO 16 increases sharply over this period, but the valley floor site HOBO 2 appears unaffected. Furthermore, a region of increased backscatter is seen in hilltop regions (between 150 and 400$\,\mbox{m}$ AGL) above Duffryn (Figure \ref{fig:LIDAR}). The RH and temperature inversion descends with time from $\sim$750$\,\mbox{m}$ AGL at 22:02 UTC to $\sim$600$\,\mbox{m}$ AGL ($\sim$350$\,\mbox{m}$ above local hill tops) by 00:30 UTC and becomes less well defined. At the same time there is a strengthening of the wind between 200 and 800$\,\mbox{m}$ AGL, and a warming between 600 and 900$\,\mbox{m}$ AGL. The wind speed and direction between 0 and 400$\,\mbox{m}$ AGL at 23:01 UTC are markedly different to the profiles before (22:02) and after (00:30). At 23:01 UTC the wind speed increases linearly with height from 0 to 175$\,\mbox{m}$ AGL and turns clockwise from the NW to the NE. A decrease in wind speed occurs between 175 and 300$\,\mbox{m}$ AGL and turns anticlockwise from the NE to NW. In both 22:02 and 23:01 UTC profiles the wind direction rotates clockwise from WNW and NW respectively at $\sim$150$\,\mbox{m}$ AGL to N at $\sim$900$\,\mbox{m}$ AGL. In all profiles the wind direction in the lowest 50$\,\mbox{m}$ AGL is down-valley (NW), which corresponds with measurements made at Duffryn (Figure \ref{fig:windtseries}). The change in wind direction at hill top regions is corroborated by measurements at Springhill (Figure \ref{fig:radiosondes}), which turn anticlockwise with time from the NE at 22:35 UTC, to a NW by 23:35 UTC. This odd behaviour in winds around 23:00 UTC coincides with the increase in downward vertical velocities and wave like structure seen at the top of the LIDAR profile as mentioned previously (Figure \ref{fig:LIDAR}).
+
+According to \citet{lalas1980tropospheric} one of the best ways to reveal gravity wave activity in the troposphere is to use radiosonde rate of ascent, where in the absence of large temperature changes decreases and increases in ascent rate can indicate wave activity in the atmosphere. Figure \ref{fig:ascentrate} shows ascent rate profiles of for the corresponding radiosondes launched from Duffryn shown in Figure \ref{fig:radiosondes}. Any decrease (increase) in the ascent rate implies an increase (decrease) in the downward component of wind, or passage of the balloon into a warmer (cooler) layer as it ascends. At 22:02 UTC a decrease in ascent rate is seen between 200 and 800$\,\mbox{m}$ followed by a rapid increase between 800 and 1000$\,\mbox{m}$. The corresponding $\theta$ results show little change across this region, suggesting that the decrease in ascent rate between 200 and 800$\,\mbox{m}$ at 22:01 UTC is due to an increase in downward vertical velocity, which  coincides with very little wind shear between the hill tops and $\sim$600$\,\mbox{m}$ AGL (Figure \ref{fig:windtseries}). There is a rapid increase in ascent rate between 800 and 1000$\,\mbox{m}$, which implies less downward motion. Above 1000$\,\mbox{m}$ the ascent rate returns to values representative of the background ascent rate. The 23:01 UTC ascent rate profile is distinctly different when compared to the profiles before (22:02 UTC) and after (00:30 UTC). In this instance there are two regions of decreasing ascent rate. The first is between 1000 and 1500$\,\mbox{m}$ and the second between 3100 and 4000$\,\mbox{m}$. There is a very small temperature inversion that exists at 3800$\,\mbox{m}$ (not shown), otherwise there is no significant warming associated with these changes in ascent rate. Relative to the other profiles the ascent profile at 00:35 UTC shows much less variation.
+%
+% Radiosonde ascent rates
+       \begin{figure*}
+        \centering
+        \includegraphics[width=15cm]{QJR_ascentrate}
+        \caption{Radiosonde rate of ascent for profiles launched from Duffryn at 22:02, 23:01 and 00:30 UTC.}
+        \label{fig:ascentrate}
+        \end{figure*}
+
+The evolution of the stability between the valley floor and hill top regions during IOP 16, is shown in terms of the Bulk Richardson number ($Ri_B$) in Figure \ref{fig:RiB}. $Ri_B$ is represented by a bulk value for the regions between Springhill 30$\,\mbox{m}$ AGL and either Burfield 30$\,\mbox{m}$ AGL or Duffryn 50$\,\mbox{m}$ AGL. Using ten minute mean data separated into 1$\,\mbox{h}$ blocks, $Ri_B$ is calculated here as;
+        \begin{equation}    \label{eq:Rib1}
+        Ri_B = \frac{N^2}{{U/dz}^2}
+        \end{equation}
+        \begin{equation}    \label{eq:Rib1}
+        N^2 = \frac{g}{\theta}\times\frac{\delta\theta}{\delta z}
+        \end{equation}
+        \begin{equation}    \label{eq:Rib1}
+        U = \sqrt{(u_2-u_1)^2+(v_2-v_1)^2}
+        \end{equation}
+\noindent where, $N^2$, is the Brunt-V\"ais\"al\"a buoyancy frequency (2), $U$, is the net velocity calculated from the vector components ($u$ and $v$) at the two measurement sites (3). As before, Springhill (30$\,\mbox{m}$ AGL $=$ 432$\,\mbox{m}$ ASL) represents the ambient flow above the valleys in hill top regions. Burfield (30$\,\mbox{m}$ AGL $=$ $346\,\mbox{m}$ ASL) and Duffryn (50$\,\mbox{m}$ AGL $=$ 296$\,\mbox{m}$ ASL) represent flow within the valley interior at their respective sites. Values of $Ri_B$ $>$1 represent laminar flow (strong stability), for 0.25 $< Ri_B <$ 1 the layer is in transition between laminar and turbulent flow (near neutral), and when $Ri_B <$ 0.25 the layer is characteristically turbulent (unstable). In the early stages of CAP evolution and during Episode 1, the region between the hill top site Springhill and the valley site Duffryn is characteristically laminar, i.e., stable (Figure \ref{fig:RiB}(b)). The same is not true for the region between Springhill and Burfield, as is evident during Episode 1. For half of 1$\,\mbox{h}$ period between 22:00 and 23:00 UTC, the region between Springhill and Burfield is in transition between laminar and laminar/turbulent flow. This indicates that the upper parts of the valleys, such as Burfield, are more susceptible to turbulent mixing during Episode 1 compared to previous. It is also known that laminar/turbulent regimes are indicative of KH instability which can manifest as wave activity \textcolor{red}{\bf(REF)}. The intermittent changes in LIDAR vertical velocity within the hill top regions may be an indication of such activity.
+% Radiosonde ascent rates
+       \begin{figure*}
+        \centering
+        \includegraphics[width=15cm]{QJR_RiB}
+        \caption{Bulk Richardson number ($Ri_B$) representing the regions between Springhill 30$\,\mbox{m}$ AGL and; (a) Burfield 30$\,\mbox{m}$ AGL, (b) Duffryn 50$\,\mbox{m}$ AGL.}
+        \label{fig:RiB}
+        \end{figure*}
+
+To summarise, interpretation of LIDAR, radiosonde and $Ri_B <$ results give evidence to support wave activity at and above the hill top regions during Episode 1. The LIDAR vertical velocity profile shows intermittent increases and decreases in hill top regions (Figure \ref{fig:LIDAR}), which bookend one notable feature that extends throughout the LIDAR profile depth around 23:00 UTC. The radiosonde profiles show that the boundary layer above the hill tops is near neutral and the region is characteristic of a residual layer. Results of $Ri_B <$ (Figure \ref{fig:RiB}) suggest that upper parts of the valleys, where the residual layer and valley CAP interact, are less stable than regions below where the inversion of the CAP is more stable. According to \citet{lalas1980tropospheric} one of the best ways to reveal gravity wave activity in the troposphere is use radiosonde rate of ascent, where in the absence of large temperature changes, increases and decreases in ascent rate can indicate wave activity in the atmosphere. The radiosonde ascent rate profile measured at 23:00 UTC (Figure \ref{fig:ascentrate}) give such evidence. The corresponding radiosonde measurement also show marked changes in wind speed and direction with height through the valley depth at the same time \textcolor{red}{\bf upward} as an anomaly of vertical velocities extends throughout the LIDAR profile depth (Figure \ref{fig:LIDAR}). These measurements are hard to explain; however, given the evidence, wave activity in the form of KH instability waves and/or gravity waves offer a plausible explanation. It may be that the small intermittent increases and decreases in vertical velocity indicate waves generated by KH instability, where as the anomaly that occurs around 23:00 UTC which extends throughout the LIDAR depth indicates a more energetic gravity wave(s).
+%
+%Over the same period an anticlockwise turning of the wind is seen at two other hill top sites, AWS 10 and AWS 2 (not shown), although neither are directly aligned to those seen at Springhill.
+% Wind t-series
+%	\begin{figure*}[htbp]
+%	  \centerline{\includegraphics[width=14cm]{figures/DuffSprBur_tseries2}}
+%	  \caption{\em Time-series of (a) wind speed, (b) wind direction, measured at the tower sites Burfield 30$\,\mbox{m}$ (... ASL), Duffryn 50$\,\mbox{m}$ (... ASL) Springhill 30$\,\mbox{m}$ (... ASL).}
+%	  \label{fig:WSandWD_tseries_IOP16}
+%	\end{figure*}
+%
+% Sonde Ascent speed: 22:02, 23:01, 00:30.
+%	\begin{figure*}[htbp]
+%	  \centerline{\includegraphics[width=14cm]{figures/Sonde_Ascent_all_04-Mar-2010}}
+%	  \caption{\em Profiles of radiosonde ascent speed at 22:02, 23:01 and 00:30 UTC.}
+%	  \label{fig:sonde_ascent}
+%	\end{figure*}
+
+\subsection{Episode 2; Acceleration of ambient wind}
+\label{ep2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Text
+During Episode 2 (between 01:00 and 02:30 UTC), increases in vertical velocities (to $\sim$1 m s$^{−1}$)  are seen in the LIDAR that descend with time from 600$\,\mbox{m}$ AGL at $\sim$01:00 UTC, reaching hill top regions (200$\,\mbox{m}$ AGL) by $\sim$01:30 UTC, and then dissipate around 02:00 UTC (Figure \ref{fig:LIDAR}). As in Episode 1, a wave like structure is seen at the top of the LIDAR profile during Episode 2; however, on this occasion there is no intermittent behaviour in the vertical velocities, i.e., little evidence of wave activity. No radiosonde measurements were taken during Episode 2, therefore identifying gravity wave activity is restricted. The disturbance in Episode 2 has a relatively small impact on the CAP evolution compared to Episodes 1 and 3. There is some warming in upper valley regions as seen at Burfield (Figure \ref{fig:tseries}(a)); the relatively small peak in ELR at the end of Episode 2 ($\sim$02:30 UTC) further supports this (Figure \ref{fig:tseries}(b)). The increase in vertical velocities in Episode 2 coincide with a change in ambient wind direction and a sudden increase in the wind speed from 2 to 4.5 m s$^{-1}$ between $\sim$01:00 and 02:00 UTC (Figures 6); ambient winds measured at Springhill (Figure \ref{fig:windtseries}) generally persist below 2 m s$^{-1}$ from sunset until $\sim$01:00 UTC and remain above 3 m s$^{-1}$ for the remainder of the night after $\sim$02:00 UTC. Such changes are likely to affect the stability of hill top regions.
+
+Referring the the $Ri_{B}$ results in Figure \ref{fig:RiB}, for the 3$\,\mbox{h}$ period preceding 02:00 UTC the region above Burfield and Duffryn is shown to  be predominantly laminar; however, for the 1$\,\mbox{h}$ period between 02:00 and 03:00 UTC Duffryn becomes partly laminar/turbulent and Burfield predominantly laminar/turbulent. During Episode 2 the upper valley regions appear to be in a transition from laminar to laminar/turbulent flow. This occurs at the same time as the increase in vertical velocities are seen in the LIDAR that descend with time (Figure \ref{fig:LIDAR}) and co-insides with the rapid increase in ambient winds seen at Springhill (Figure \ref{fig:windtseries}). Subsequently the decrease in stability in hill top regions is likely caused by the increased wind speeds, leading to more shear-driven turbulence, which in turn mixes warmer air down into the valley interior. This occurs despite ambient winds remaining relatively low (less than 5 m s$^{-1}$) throughout Episode 2. This is below wind speed thresholds typically shown by others to initiate CAP and drainage flow break up as previously discussed. This suggests that despite relatively light winds the effects of changing winds on stability in hill top regions is significant enough to induce turbulent mixing in higher regions of the valley. Upper slopes and upper parts of drainage flows are known to be particularly susceptible to breakdown through turbulent mixing from above, due to their proximity to the free atmosphere, lack of terrain sheltering and generally weaker density gradients than lower valley regions \citep{barr1989influence,gudiksen1992measurements}. \citet{orgill1992mesoscale} suggest that ambient wind accelerations exceeding $\sim$4.0$\times10^4$ m s$^{-2}$ can lead to drainage flow erosion. The acceleration of the ambient wind over the 1.5$\,\mbox{h}$ period during Episode 2 equates to a mean acceleration of $\sim$4.5$\times10^4$ m s$^{-2}$; therefore, results here are in-line with findings by \citet{orgill1992mesoscale}\textcolor{red}{\bf Check this is a result of this paper, also why would such a threshold in wind speed acceleration indicate turbulence? divergence?}. The increase in winds seen at Springhill may reflect the continued trend seen in the radiosonde profiles during Episode 1, where a decent of an inversion associated with a decrease in RH and increase in winds is seen. In this instance the residual layer that existed during the early evening and during Episode 1 at and above the hill tops, is eroded during Episode 2 from top down; subsequently, the stable to neutral conditions that favour wave activity in Episode 1 no longer exist after Episode 2.
+%
+% OLD tower profiles:
+%
+%	\begin{figure}[htbp]
+%		\centering
+%		\subfigure[]{\includegraphics[width=4.5cm]{../Figures/pics_chapt_March/Tower/evo1hr_WS3} \label{fig:evo2_wspd}} \
+%		\subfigure[]{\includegraphics[width=4.5cm]{../Figures/pics_chapt_March/Tower/evo1hr_WD3} \label{fig:evo2_wdir}} \
+%		\subfigure[]{\includegraphics[width=4.5cm]{../Figures/pics_chapt_March/Tower/evo1hr_Pst3} \label{fig:evo2_wper}} \
+%		\subfigure[]{\includegraphics[width=4.5cm]{../Figures/pics_chapt_March/Tower/evo1hr_TKE3} \label{fig:evo2_TKE}} \
+%		\caption{\em Duffryn vertical profiles of; \subref{fig:evo1_wspd} wind speed, \subref{fig:evo1_wdir} wind direction, \subref{fig:evo1_wper} wind direction persistence and \subref{fig:evo1_TKE} TKE. For 1hr mean intervals; 01:35--02:35 UTC (black), 02:35--03:35 UTC (blue), 03:35--04:35 UTC (red) and 04:35--05:35 UTC (green).}
+%	  	\label{fig:Duff_tower_evo2}
+%	\end{figure}
+
+\subsection{Episode 3; Nocturnal low-level-jet}
+\label{ep3}
+During Episode 3 the LIDAR vertical velocities appear distinctly different to those seen at any time previous in the night during IOP 16, including Episodes 1 and 2 (Figure \ref{fig:LIDAR}). In this instance the vertical velocities are characteristically more turbulent with increased vertical velocities present across the majority of the LIDAR profile depth (200 to 600$\,\mbox{m}$ AGL), which  persist for a relatively long period of time. Following the sudden increase in ambient winds during Episode 2, the winds remain between 4 and 5 m s$^{-1}$ throughout Episode 3 (from 03:30 to 06:00 UTC) and are the highest winds measured at Springhill during the night (Figure \ref{fig:windtseries}). This is confirmed by the LIDAR wind speed profile in Figure \ref{fig:LIDARWS}, which shows the existance of increased wind speeds in hill top regions.
+
+       \begin{figure*}
+        \centering
+        \includegraphics[width=15cm]{QJR_LIDAR_WS}
+        \caption{Time series of NCAS LIDAR measurements of wind speed taken at Duffryn. Dashed line indicates local hill tops.}
+        \label{fig:LIDARWS}
+        \end{figure*}
+
+Over the same period the $Ri_B$ results in Figure \ref{fig:RiB} indicate that the regions above both Burfield and Duffryn are less stable after 02:00 UTC. This is caused by higher winds leading to more turbulent mixing, as highlighted by higher vertical velocities in the LIDAR profile (Figure \ref{fig:LIDAR}). Episode 3 is also associated with less LIDAR backscatter (Figure \ref{fig:LIDAR}), which is indicative of either drier air, i.e., less condensate, or cleaner air, i.e., fewer aerosols. The RH and $M_r$ time-series in Figure \ref{fig:tseries}(c-d) suggest that the region of reduced backscatter is less humid. At the start of Episode 3 there is a noticeable dip in the ELR ($\sim$03:30 UTC) and between 04:00 and 06:00 UTC the ELR rapidly increases. This is due to warming of some elevated sites, including Burfield, combined with continued cooling of valley floor locations (see Figure \ref{fig:Tblobs}(b)). This warming is likely linked to lower RH in hill top regions as shown in Figure \ref{fig:tseries}, with warmer and drier air being mixed down from aloft; subsidence associated with the high pressure is also likely, which will also cause some warming.
+
+The change in wind speed and direction following Episode 2 and the sustained increase in winds during Episode 3, appear to be part of a synoptic change that occurs during the night. The $Ri_B$ results in Figure \ref{fig:RiB} clearly indicate that regions above both Burfield and Duffryn are more turbulent after 02:00 UTC when the residual layer is eroded and an increase in ambient winds is seen. This also coincides with a change in behaviour of the Duffryn drainage compared to the period following sunset (Figure \ref{fig:windtseries}). An increase in ambient wind speed at/near hill top regions will reduce the stability in these areas through increased shear (mechanical derived turbulence), which appears to be occurring during Episode 3 as illustrated by $Ri_B$ results in Figure \ref{fig:RiB}. The hill top winds during Episode 3 take values between 4 and 5 m s$^{-1}$ much of the time. This is in keeping with studies which have suggest a threshold for erosion of pre-existing CAPs and drainage flows between 5 and 8 m s$^{-1}$ \citep{barr1989influence,orgill1992mesoscale,bogren2000local,iijima2000seasonal,whiteman2001cold,vosper2008numerical}. Although increased ambient winds are the likely cause of CAP disruption during Episode 3, the CAP persisted and cooling of valley bottom regions continued despite the interruption of drainage flows at Duffryn and to a larger extent at Burfield (Figure \ref{fig:windtseries}). \citet{mahrt2010non} show that large wind direction shifts in drainage flows tend to occur when the drainage flow is intermittent, this occurs on nights when the synoptic flow is more significant or the cooling weaker. This type of behaviour is characteristic of the drainage flow behaviour at Burfield during periods CAP disruption in the second half of the night.
+
+The radiosonde profiles from Duffryn show the development of a strong jet above the valley during the night (Figure \ref{fig:radiosondes}). At the hill top regions ($\sim$200$\,\mbox{m}$ AGL) the wind speed at 05:35 UTC is $\sim$4.5 m s$^{-1}$. Above the hill top regions there is a strong wind speed gradient with height, reaching a peak of $\sim$9 m s$^{-1}$ at $\sim$1000$\,\mbox{m}$ AGL. A jet peak of $\sim$9 m s$^{-1}$ is roughly proportional to, or slightly higher than the expected geostrophic wind speed estimated from the surface analysis chart in Figure \ref{fig:metcharts}. The wind speed gradient corresponds to a clockwise turning of the wind with height, veering from a NW at the hill tops to the N at jet peak height ($\sim$1000$\,\mbox{m}$ AGL), which is geostrophic or slightly above geostrophic (supergeostrophic) when compared to the surface analysis charts in Figure \ref{fig:metcharts}. The 05:35 UTC radiosonde wind profile (Figure \ref{fig:radiosondes}) has many of the characteristics of a nocturnal low level jet (NLLJ) as described by \citet{thorpe1977nocturnal}, where; a pronounced supergeostrophic wind maximum is expected within a few hundred meters of the ground, there is a veering of the wind direction with height and the jet maximum occurs at or slightly above the nocturnal inversion layer. NLLJs are known to form preferentially inland during the night above near surface inversions, when fine weather conditions prevail and little or no cloud cover is present; conditions synonymous with CAP formation. These characteristics are seen in other studies, such as the recurrence of a NLLJ over the Great Plains of the US \citep[p 168]{whiteman2000mountain}. Since NLLJs and CAPs are favoured under the same conditions, it seems reasonable to assume that the occurrence of both simultaneously is likely for other inland regions across the UK. Radiosonde measurements from other IOPs during COLPEX show similar results, suggesting that NLLJs re-occur with some consistency when CAPs occur.
+
+
+\subsection{Episode 3; CAP break-up}
+\label{ep4}
+The coldest temperatures experienced during IOP 16 occur around sunrise ($\sim$06:55 UTC) at the lowest elevated sites (Figure \ref{fig:Tblobs}(c) and Figure \ref{fig:tseries}(a)). At the same time a 24$\,\mbox{h}$ peak in the ELR occurs (Figure \ref{fig:tseries}(b)), suggesting that temperature differences from the valley floor to the hill tops are the largest observed at any time during IOP 16. Warming is seen across all regions between 07:35 and 08:35 UTC, but the rate of warming is higher at valley floor locations (such as AWS 6 and AWS 5). By 08:35 UTC ($\sim$1.5$\,\mbox{h}$ after sunrise) a CAP still persists in these lower regions, with temperature differences on the order of $\sim$6 K observed between the lowest site HOBO 6 (Clun) and some hill top sites (e.g., Springhill; Figure \ref{fig:tseries}(a)). At $\sim$10:00 UTC values of $\theta$ (Figure \ref{fig:tseries}(a)), RH (Figure \ref{fig:tseries}(c)), $M_r$ (Figure \ref{fig:tseries}(d)), wind speed and direction (Figure \ref{fig:windtseries}) all converge, with measurements at the valley bottom matching those at hill top locations. The valley winds at Duffryn mirror the hill top winds at Springhill, this suggests that the valley winds are coupled with the ambient winds above, i.e., the valley winds are driven by downward momentum transport of the ambient wind rather than by cold air drainage \citep{whiteman1993relationship}. By 10:30 UTC vertical profiles of wind speed, $\theta$ and TKE measured at Duffryn also exhibit those typical of a daytime CBL profile (not shown).
+
+During the break-up phase of the CAP, between 09:00 and 10:00 UTC (as the inversion weakens; see Figure \ref{fig:tseries}(a-b)), two regions of increased vertical velocities are seen in the LIDAR profile above the valley (Figure \ref{fig:LIDAR}). The first is an elevated region that descends with time from 09:00 to 10:00 UTC. The second region remains between 150 and 400$\,\mbox{m}$ AGL over this period and is more intermittent (similarities to Episode 1, but in this case higher values are seen). Just before 10:00 UTC the two regions of increased vertical velocities become almost indistinguishable. The descending region of increased vertical velocities may reflect downward momentum transport of the NLLJ, as identified in the radiosonde profile at 05:35 UTC (Figure \ref{fig:radiosondes}). Unfortunately no radiosonde profiles were launched after 05:35 UTC, therefore from an observational point of view there is no way to confirm if the NLLJ was still present during CAP break-up and whether the NLLJ weakened or strengthened over this period (05:35 to 10:00 UTC). Providing the NLLJ continued to exist after 05:35 UTC, it will have likely affected the sequence of CAP break up, including timing.
+
+
+\section{Summary and conclusions}
+\label{summary}
+Accurately predicting minimum temperature associated with the formation, evolution and break-up of CAPs during SBL conditions, remains a challenge for weather forecast models. This paper presents a detailed case study of CAPs in small-scale hilly terrain using a unique set of field observations from IOP16 of the COLPEX field experiment \citep{price2010COLPEX}. The synoptic conditions during IOP 16 are indicative of CAP occurrences; settled high pressure situation, light winds and clear skies throughout the night, and at first sight this looks like an “ideal” CAP case. Close examination of the data however shows that the evolution of the CAP is disturbed by several different phenomena during the night. In this instance the winds alone do not appear to be the direct cause of CAP disturbance and no fog or cloud formations were observed throughout the night. On this occasion the disturbances were not effective enough to cause CAP break up as is the case for marginal CAPs as discussed by \citep{mahrt2015common}. Here the CAP growth is arrested and drainage flows intermittently disturbed. These disruptions are particularly visible in valley ELR and LIDAR measurements of vertical velocity. Three episodes are highlighted and CAP disturbance attributed to: (1) wave activity, caused by gravity waves and/or KH instability induced waves, (2) an acceleration of the ambient wind in hill top regions over a period of 1 h, (3) the presence of a NLLJ in the boundary-layer above the valleys.
+       \begin{figure*}
+        \centering
+        \includegraphics[width=15cm]{QJR_summaryschematic}
+        \caption{\textcolor{red}{\bf Figure needs replacing with higher def version on Stevies laptop. Either improve this figure or change to illustrate each phenomena separately} Illustration showing the sequence of events that cause CAP disruption during IOP 16.}
+        \label{fig:schematic}
+        \end{figure*}
+
+The schematic in Figure \ref{fig:schematic} summarises the sequence of events that occur during CAP evolution throughout IOP 16. Up to Episode 1 the expected sequence of CAP and drainage flow evolution occurs, there is undisturbed growth of the CAP and drainage flows develop and persist with some consistency. However, during Episode 1 there is a redistribution of air in some valleys with warming seen in some, but not all lower regions. This occurs despite ambient winds remaining relatively low and generally persistent around 3 m s$^{-1}$ and no evidence of cloud or fog throughout Episode 1; the two key meteorological conditions that control CAP and drainage flow breakup \citep{sheridan2013characteristics}. 
+
+Episode 1 is characterised by intermittent increases and decreases in vertical velocities over a 1$\,\mbox{h}$ period in hill top regions, which bookend a notable feature that occurs throughout the LIDAR profile depth at 23:00. Boundary-layer radiosonde rate of ascent and $Ri_B$ results suggest this to be caused by wave activity, which occurs within a residual layer at and above hill top regions. The exact cause of the wave activity during Episode 1 is not determined; however, both observations and COLPEX model simulations \citep{Vosper2013narrow} show a marked change in the wind speed and direction with height (horizontal shear also possible), which may be the mechanism for gravity wave generation and/or wave trapping. Other possible causes of gravity wave generation include orographic generation (local or non local source), or the local formation of a hydraulic jump. A prevailing wind from the NW to N may indicate orographic gravity wave generation up wind caused my higher, rougher topography (Snowdinia in North Wales). KH instability waves in hill top regions may be caused by weak shear between the weak ambient wind above and weak winds below caused by the drainage flows. Changes in the valley ELR suggest the wave activity was not significant enough to completely break up the CAP and only temporary disruption of the drainage flows at Burfield and Duffryn are seen. The wave activity does not affect the entire Clun Valley region, at least not for a significant length of time, and the lowest regions with strong near-surface stability are largely unaffected. The possible signature of a drainage flow from the AWS 3 tributary valley at Duffryn may indicate that the AWS 3 drainage flow was uninterrupted, or less prone to disturbance caused by the wave activity. This bares similarity to the study by \citet{adler2012warm}, which hypothesised local hydraulic jumps were the cause of episodic intrusions of warm air (up to 5 K warmer) into Arizona’s Meteor Crater on clear, synoptically undisturbed nights, where the CAP was not completely eroded and the lowest 30$\,\mbox{m}$ remained undisturbed.
+
+Episode 2 is characterised by a region of increased vertical velocities that descend over a 1.5$\,\mbox{h}$ period, which coincide with an acceleration in the ambient wind. By $\sim$02:00 UTC the ambient winds stop accelerating and a region of increased vertical velocities dissipate out. This feature is expected to signify the arrival of the NLLJ at hill top regions as momentum is mixed down from above and the erosion of the residual layer is expected to be complete; therefore, eroding conditions that were previously favourable wave activity.
+
+The LIDAR vertical velocities throughout Episode 3 are elevated and are characteristically more turbulent. During Episode 3 the NLLJ continues to develop into the morning hours and maintains elevated winds -- relative to Episodes 1 and 2 -- in hill top regions close to thresholds found to initiate drainage flow and CAP break up by others \citep{barr1989influence,orgill1992mesoscale,bogren2000local,iijima2000seasonal,whiteman2001cold,vosper2008numerical}.  Despite this CAP break-up does not occur and drainage flows continue with some intermittent behaviour however, most notable in higher regions such as Burfield. CAP break up occurs approximately 3$\,\mbox{h}$ after local sunrise at $\sim$10:00 UTC -- although some of the lowest sites remain cooler until $\sim$10:35 UTC -- and this is finally achieved when a mixing down of momentum from above occurs. Initial investigations of other IOPs during COLPEX suggest that NLLJs reoccur with some consistency during other CAP nights. The uncertainty in the role of a NLLJ in the timing of CAP break up is an interesting question.
+
+Modelling CAP formation and evolution is a challenge, due to the small local scale of many of the dominant processes (small-scale orography leading to localised differences in surface energy balance, cooling and local drainage flows); however, other research as part of COLPEX suggests that at least in clear sky cases these processes are captured in very high resolution models \citep{vosper2013high,Vosper2013narrow,hughes2015assessment}. While NLLJs should be accurately modelled in simulations with sufficiently high resolution, some of the other processes leading to disruption of CAP development are also a challenge for models. In particular the wave activity during Episode 1 was not present in the simulations of \citep{Vosper2013narrow}. It is not clear whether this is due to differences in the temperature or wind profiles over the region preventing local generation of KH instability and/or gravity waves, or whether the disturbance was a propagating feature (more likely for gravity waves), neither of which was present in the model. More fundamentally accurately modelling turbulence and the intermittent nature of stable boundary layers remains a big challenge for numerical models. Detailed observational case studies such as these are required to ensure the important physical processes at work in CAP evolution are understood and to challenge the models in order to develop better representation of these stable boundary layer processes in future. 
+
+\textcolor{red}{\bf NOTES:  A recurring NLLJ that favours development during the same synoptic conditions as CAPs will directly affect the ambient winds, stability and subsequently drainage flows, CAP evolution and strength. NLLJs are likely to have most impact on CAPs towards the end of the night, when winds above the valley are strongest as the NLLJ continues to develop. It seems unlikely that the occurrence of both CAPs and NLLJs are limited to the Clun Valley region alone. Therefore the same processes are likely to be important for valleys in other inland regions of the UK and other mid-latitude regions world wide.}
+
+%%%%%%%%%%%%%%%%
+% OLD
+%It is clear from results presented here that the CAP evolution during IOP 16 is not uninterrupted, despite the fact that the synoptic conditions are ``ideal'' for strong CAPs to form. Instead the evolution of the CAP is disturbed, but not to the extent that the CAP break-up occurs as is the case for the marginal CAPs discussed by Mahrt (2015), instead the CAP growth is arrested. This is clear when viewing the evolution of the CAP in terms of a valley ELR (figure \ref{fig:TlapseMar}). The ELR increases uninterrupted until $\sim$22:00 UTC, at which point the evolution of the ELR changes. The disturbance of the CAP evolution is characterised by the behaviour of the LIDAR vertical velocity profile, with three episodes highlighted:
+
+
+\subsection{Acknowledgements}
+COLPEX … Met Office staff, Leeds Uni Staff, NCAS, Salford… etc.  Editors and reviewers.
+
+\subsection{Copyright}
+Copyright \copyright\ \volumeyear\ John Wiley \& Sons, Ltd, The Atrium,
+Southern Gate, Chichester, West Sussex, PO19$\sim$8SQ, UK.  All rights reserved.
+
+\begin{thebibliography}{99}
+
+\bibitem[Adler et al (2012)]{adler2012warm}
+Adler~B, Whiteman~CD, Hoch~SW, Lehner~M, Kalthoff~N. 2012.
+\emph{Warm-Air Intrusions in Arizona's Meteor Crater. J. of Appl. Meteorol. and Climatol.}
+{\bf 51:} 1010--1025.
+
+\bibitem[Banta et al (2004)]{banta2004nocturnal}
+Banta~RM, Darby~LS. Fast~JD, Pinto~JO, Whiteman~CD, Shaw~WJ, Orr~BW. 2004.
+\emph{Nocturnal low-level jet in a mountain basin complex. Part I: Evolution and effects on local flows. J. Appl. Meteorol.} {\bf 43:} 1348--1365.
+
+\bibitem[Barr et al (1989)]{barr1989influence}
+Barr~S, Orgill~MM. 1989. \emph{Influence of external meteorology on nocturnal valley drainage winds. J. Appl. Meteorol.} {\bf 28:} 497--517.
+
+\bibitem[Bodine et al (2009)]{bodine2009}
+Bodine~D, Klein~PM, Arms~SC, Shapiro~A. 2009. \emph{Variability of Surface Air Temperature over Gently Sloped Terrain. J. Appl. Meteorol. Climatol.} {\bf 48:} 1117--1141.
+
+\bibitem[Bogren et al (2000)]{bogren2000local}
+Bogren~J, Gustavsson~T, Postg{\aa}rd~U. 2000. \emph{Local temperature differences in relation to weather parameters. Int. J. of Climatol.} {\bf 20:} 151--170.
+
+\bibitem[Clements et al (2003)]{clements2003cold}
+Clements~CB, Whiteman~CD, Horel~JD. 2003. \emph{Cold-air-pool structure and evolution in a mountain basin: Peter Sinks, Utah. J. Appl. Meteorol.} {\bf 42:} 752--768.
+
+\bibitem[Coulter et al (1989)]{coulter1989}
+Coulter~RL, Orgill~M, Porch~W. 1989. \emph{Tributory fluxes in to Bruch Creek Valley. J. Appl. Meteorol.} {\bf 28:} 555--568.
+
+\bibitem[Cuxart et al (2000)]{cuxart2000stable}
+Cuxart~J, Yag{\"u}e~C, Morales~G, Terradellas~E, Orbe~J, Calvo~J, Fern{\'a}ndez~A, Soler~MR, Infante~C, Buenestado~P, and others. 2000. \emph{Stable atmospheric boundary-layer experiment in Spain (SABLES 98): a report. Boundary-Layer Meteorol.} {\bf 96:} 337--370.
+
+\bibitem[Daly et al (2010)]{daly2010local}
+Daly~C, Conklin~DR, Unsworth~MH. 2010. \emph{Local atmospheric decoupling in complex topography alters climate change impacts. International Journal of Climatology.} {\bf 30:} 1857--1864.
+
+\bibitem[Gudiksen et al (1992)]{gudiksen1992measurements}
+Gudiksen~PH, Leone~JM, King~CW, Ruffieux~D, Neff~WD. 1992. \emph{Measurements and modelling of the effects of ambient meteorology on nocturnal drainage flows. J. Appl. Meteorol.} {\bf 31:} 1023--1032.
+
+\bibitem[Gustavsson et al (1998)]{gustavssonetal1998}
+Gustavsson~T, Karlsson~M, Bogren~J, Lindqvist~S. 1998. \emph{Development of temperature patterns during clear nights. J. Appl. Meteorol.} {\bf 37:} 559--571.
+
+\bibitem[Heywood (1933)]{heywood1933katabatic}
+Heywood~GSP. 1933. \emph{Katabatic winds in a valley. Q. J. R. Meteorol. Soc.} {\bf 59:} 47--58.
+
+\bibitem[Holden et al (2000)]{holden2000tethered}
+Holden~JJ, Derbyshire~SH, Belcher~SE. 2000. \emph{Tethered balloon observations of the nocturnal stable boundary layer in a valley. Boundary-Layer Meteorol.} {\bf 97:} 1--24.
+
+\bibitem[Hughes et al (2015)]{hughes2015assessment}
+Hughes~JK, Ross~AN, Vosper~SB, Lock~AP, Jemmett-Smith~BC. 2015. \emph{Assessment of valley cold pools and clouds in a very high resoloution NWP model. Analysis.} {\bf 8:} 4453--4486.
+
+\bibitem[Iijima et al (2000)]{iijima2000seasonal}
+Iijima~Y, Shinoda~M. 2000. \emph{Seasonal changes in the cold-air pool formation in a subalpine hollow, central Japan. Int. J. Climatol.} {\bf 20:} 1471--1483.
+
+\bibitem[King and Giles (1997)]{KingandGiles1997}
+King~J, Giles~B. 1997. \emph{Regional Climates of the British Isles. Routledge London.} 111--129.
+
+%[Jemmett-Smith (2014)]{jemmett2014cold}
+%Jemmett-Smith~BC. 2014. \emph{Cold air pools over complex terrain. PhD Thesis, University of Leeds.}
+
+\bibitem[Lalas et al (1980)]{lalas1980tropospheric}
+Lalas~DP, Einaudi~F. 1980. \emph{Tropospheric gravity waves: Their detection by and influence on rawinsonde balloon data. Q. J. R. Meteorol. Soc.} {\bf 106:} 855--864.
+
+\bibitem[Lareaue et al (2013)]{lareauetal2013persist}
+Lareau~NP, Crosman~E, Whiteman~CD, Horel~JD, Hoch~SW, Brown~WOJ, Horst~TW. 2013. \emph{The persistent cold-air pool study. Bull. Am. Meteorol. Soc.} {\bf 94:} 51--63
+
+\bibitem[Lindkvist et al (2000)]{lindkvistetal2000}
+Lindkvist~L, Gustavsson~T, Bogren~J. 2000. \emph{A frost assessment method for mountainous areas. Agri. Forest Meteorol.} {\bf 102:} 51--67.
+
+\bibitem[Madelin et al (2005)]{madelin2005spatial}
+Madelin~M, Beltrando~G. 2005. \emph{Spatial interpolation-based mapping of the spring frost hazard in the Champagne vineyards. Meteorol. App.} {\bf 12:} 51--56.
+
+\bibitem[Mahrt et al (2010)]{mahrt2010non}
+Mahrt~L, Richardson~S, Seaman~N, Stauffer~D. 2010. \emph{Non-stationary drainage flows and motions in the cold pool. Tellus A.} {\bf 62:} 698--705.
+
+\bibitem[Mahrt (2014)]{mahrt2014stably}
+Mahrt~L. 2014. \emph{Stably Stratified Atmospheric Boundary Layers. Annual Review of Fluid Mechanics.} {\bf 46:} 23--45.
+
+\bibitem[Mahrt and Heald (2015)]{mahrt2015common}
+Mahrt~L, Heald~R. 2015. \emph{Common marginal cold pools. J. of Applied Meteorol. and Climatol.} {\bf 54:} 339--351.
+
+\bibitem[Manins and Sawford (1979)]{manins1979katabatic}
+Manins~PC, Sawford~BL. 1979. \emph{Katabatic winds: A field case study. Q. J. R. Meteorol. Soc.} {\bf 105:} 1011--1025.
+
+\bibitem[Orgill et al (1992)]{orgill1992mesoscale}
+Orgill~MM, Kincheloe~JD, Sutherland~RA. 1992. \emph{Mesoscale influences on nocturnal valley drainage winds in Western Colorado valleys. J. Appl. Meteorol.} {\bf 31:} 121--141.
+
+\bibitem[Parker and Raman (1993)]{parker1993case}
+Parker~MJ, Raman~S. 1993. \emph{A case study of the nocturnal boundary layer over a complex terrain. Boundary-Layer Meteorol.} {\bf 66:} 303--324.
+
+\bibitem[Pozdnoukhov et al (2009)]{pozdnoukhov2009data}
+Pozdnoukhov~A,Foresti~L, Kanevski~M. 2009. \emph{Data-driven topo-climatic mapping with machine learning methods. Natural hazards.} {\bf 50:} 497--518. 
+
+\bibitem[Price et al (2010)]{price2010COLPEX}
+Price~JD, Vosper~S, Brown~A, Ross~AN, Clark~P, Davies~F, Horlacher~V, Claxton~B, McGregor~JR, Hoare~JS, Jemmett-Smith~B, Sheridan~P. 2011. \emph{COLPEX: Field and Numerical Studies Over a Region of Small Hills. Bull. Am. Meteorol. Soc.} {\bf 92:} 1636--1650.
+
+\bibitem[Rolland (2003)]{rolland2003}
+Rolland~C. 2003. \emph{Spatial and seasonal variations of air temperature lapse rates in alpine regions. J. Clim.} {\bf 16:} 1032--1046.
+
+\bibitem[Sheridan et al (2013)]{sheridan2013characteristics}
+Sheridan~PF, Vosper~SB, Brown~AR. 2013. \emph{Characteristics of cold pools observed in narrow valleys and dependence on external conditions. Q. J. R. Meteorol. Soc.} {\bf 40:} 715–728.
+
+\bibitem[Smith et al (2010)]{smith2010observations}
+Smith~SA, Brown~AR, Vosper~SB, Murkin~PA, Veal~AT. 2010. \emph{Observations and Simulations of Cold Air Pooling in Valleys. Boundary-Layer Meteorol.} {\bf 134:} 85--108.
+
+\bibitem[Thorpe and Guymer (1977)]{thorpe1977nocturnal}
+Thorpe~AJ, Guymer~TH. 1977. \emph{The nocturnal jet. Q. J. R. Meteorol Soc.} {\bf 103:} 633--653.
+
+\bibitem[Vosper and Brown (2008)]{vosper2008numerical}
+Vosper~SB, Brown~AR. 2008. \emph{Numerical simulations of sheltering in valleys: The formation of nighttime cold-air pools. Boundary-Layer Meteorol.} {\bf 127:} 429--448.
+
+\bibitem[Vosper et al (2013a)]{vosper2013high}
+Vosper~SB, Carter~E, Lean~H, Lock~A, Clark~P, Webster~S. 2013. \emph{High resolution modelling of valley cold pools. Atmospheric Science Letters.} {\bf 14:} 193--199.
+
+\bibitem[Vosper et al (2013b)]{Vosper2013narrow}
+Vosper~S, Hughes~JK, Lock~AP, Sheridan~PF, Ross~AR, Jemmett-Smith~B, Brown~AR. 2013. \emph{Cold pool formation in a narrow valley. Q. J. R. Meteorol. Soc.} {\bf 140:} 699--714.
+
+\bibitem[Whiteman and Doran (1993)]{whiteman1993relationship}
+Whiteman~CD, Doran~JC. 1993. \emph{The relationship between overlying synoptic-scale flows and winds within a valley. J. of App. Meteorol.} {\bf 32:} 1669--1682.
+
+\bibitem[Whiteman et al (1999)]{whiteman1999wintertime}
+Whiteman~CD, Bian~X, Zhong~S. 1999. \emph{Wintertime evolution of the temperature inversion in the Colorado Plateau Basin. J. Appl. Meteorol.} {\bf 38:} 1103--1117.
+
+\bibitem[Whiteman (2000)]{whiteman2000mountain}
+Whiteman~CD. 2000. \emph{Mountain meteorology: fundamentals and applications. Oxford University Press, USA}
+
+\bibitem[Whiteman et al (2001)]{whiteman2001cold}
+Whiteman~CD, Zhong~S, Shaw~WJ, Hubbe~JM, Bian~X, Mittelstadt~J. 2001. \emph{Cold pools in the Columbia Basin. Weather and Forecasting.} {\bf 16:} 432--447.
+
+\bibitem[Whiteman et al (2008)]{whiteman2008metcrax}
+Whiteman~CD, Muschinski~A, Zhong~S, Fritts~D, Hoch~SW, Hahnenberger~M, Yao~W, Hohreiter~V, Behn~M, Cheon~Y, and others. 2008. \emph{Metcrax 2006. Bull. Am. Meteorol. Soc.} {\bf 89:} 1665--1680.
+
+\bibitem[Z{\"a}ngl (2008)]{zangl2005dynamical}
+Z{\"a}ngl, G. 2008. \emph{Dynamical aspects of wintertime cold-air pools in an Alpine valley system .Mon. Weather Rev.} {\bf 133:} 2721--2740.
+
+\end{thebibliography}
+\end{document}
