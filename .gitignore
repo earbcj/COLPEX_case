@@ -1,0 +1,11 @@
+figures/
+oldfiles/
+QJR_casestudy.log
+QJR_casestudy.out
+QJR_casestudy.pdf
+QJR_casestudy.aux
+*.eps
+QJR_casestudy.dvi
+QJR_casestudy.ps
+readme(bst).txt
+wileyqj.bst
